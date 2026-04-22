@@ -1,0 +1,182 @@
+/* 1. RESET & BASE STYLES */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', 'Segoe UI', sans-serif; 
+}
+body { 
+    background: #080808; 
+    color: #ffffff; 
+    scroll-behavior: smooth; 
+    overflow-x: hidden; 
+    line-height: 1.6; 
+}
+
+/* 2. RED ANNOUNCEMENT TICKER */
+.ticker-wrap { 
+    width: 100%; 
+    overflow: hidden; 
+    background: #ff3e3e; 
+    color: #000; 
+    padding: 12px 0; 
+    position: fixed; 
+    top: 0; 
+    z-index: 2000; 
+    font-weight: 900; 
+    text-transform: uppercase; 
+    font-size: 0.85rem; 
+    letter-spacing: 1px; 
+}
+.ticker { 
+    display: inline-block; 
+    white-space: nowrap; 
+    animation: ticker 25s linear infinite; 
+}
+.ticker-item { 
+    display: inline-block; 
+    padding: 0 3rem; 
+}
+@keyframes ticker { 
+    0% { transform: translateX(100%); } 
+    100% { transform: translateX(-100%); } 
+}
+
+/* 3. NAVIGATION (Glassmorphism Effect) */
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1.5rem 8%; 
+    background: rgba(0,0,0,0.85); 
+    backdrop-filter: blur(10px); 
+    position: fixed; 
+    width: 100%; 
+    top: 40px; 
+    z-index: 1000; 
+    border-bottom: 1px solid #1a1a1a; 
+}
+.logo { 
+    font-size: 1.6rem; 
+    font-weight: 900; 
+    letter-spacing: 3px; 
+    color: #ff3e3e; 
+}
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 2rem; }
+nav ul li a { 
+    text-decoration: none; 
+    color: #fff; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+    transition: 0.3s; 
+}
+nav ul li a:hover { color: #ff3e3e; }
+
+/* 4. HERO SECTION */
+header { 
+    height: 85vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    background: linear-gradient(rgba(0,0,0,0.7), #080808), url('https://unsplash.com'); 
+    background-size: cover; 
+    background-position: center; 
+    padding-top: 100px; 
+}
+header h1 { 
+    font-size: clamp(2.5rem, 8vw, 5rem); 
+    font-weight: 900; 
+    text-transform: uppercase; 
+}
+
+/* 5. CEO CARD */
+.ceo-section { background: #0c0c0c; padding: 6rem 8%; text-align: center; }
+.ceo-card { 
+    max-width: 500px; 
+    margin: 0 auto; 
+    border: 2px solid #ff3e3e; 
+    padding: 3rem; 
+    background: #000; 
+    border-radius: 4px; 
+}
+.ceo-card span { 
+    color: #ff3e3e; 
+    font-weight: 900; 
+    letter-spacing: 5px; 
+    font-size: 0.8rem; 
+    display: block; 
+    margin-bottom: 10px; 
+}
+
+/* 6. ARTIST ROSTER & SPOTIFY BUTTONS */
+section { padding: 6rem 8%; text-align: center; }
+.artist-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; 
+}
+.card { 
+    background: #111; 
+    padding: 4rem 2rem; 
+    border: 1px solid #1a1a1a; 
+    transition: 0.4s; 
+}
+.card:hover { 
+    border-color: #ff3e3e; 
+    transform: translateY(-10px); 
+}
+.spotify-btn { 
+    display: inline-block; 
+    margin-top: 20px; 
+    padding: 12px 25px; 
+    border: 2px solid #1DB954; 
+    color: #1DB954; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border-radius: 30px; 
+    text-transform: uppercase; 
+    font-size: 0.7rem; 
+    transition: 0.3s; 
+}
+.spotify-btn:hover { 
+    background: #1DB954; 
+    color: #000; 
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.4); 
+}
+
+/* 7. DEMO DROP FORM */
+.form-container { 
+    max-width: 600px; 
+    margin: 0 auto; 
+    background: #111; 
+    padding: 3rem; 
+    text-align: left; 
+}
+input, textarea { 
+    width: 100%; 
+    padding: 1.2rem; 
+    background: #080808; 
+    border: 1px solid #222; 
+    color: #fff; 
+    margin-bottom: 1rem; 
+}
+.btn { 
+    background: #ff3e3e; 
+    color: #fff; 
+    padding: 1.2rem; 
+    border: none; 
+    font-weight: bold; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    width: 100%; 
+    transition: 0.3s;
+}
+.btn:hover { background: #fff; color: #000; }
+
+/* 8. FOOTER */
+footer { padding: 4rem; text-align: center; border-top: 1px solid #111; }
+.socials a { color: #888; font-size: 2rem; margin: 0 15px; transition: 0.3s; }
+.socials a:hover { color: #ff3e3e; }
